@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function CtaButton() {
   return (
     <Link
-      href="/contact"
+      href="/signup"
       className="inline-flex items-center rounded-xl bg-zinc-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
     >
       Get Started
@@ -31,7 +31,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           nav={[
             // { href: "/", label: "Home", exact: true },
             { href: "/programs", label: "Browse Programs" },
+            { href: "/how-it-works", label: "How It Works" },
             { href: "/about", label: "About" },
+            { href: "/login", label: "Login" },
           ]}
           rightSlot={<CtaButton />}
         />
