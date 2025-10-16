@@ -33,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             { href: "/programs", label: "Browse Programs" },
             { href: "/how-it-works", label: "How It Works" },
             { href: "/about", label: "About" },
+            { href: "/pose-library", label: "Pose Library" },
             { href: "/login", label: "Login" },
           ]}
           rightSlot={<CtaButton />}

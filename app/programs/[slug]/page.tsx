@@ -2,10 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, Clock, Target, CheckCircle, Lock, Play, ChevronDown, ChevronUp } from "lucide-react"
+import { Clock, Target, CheckCircle, Lock, Play, ChevronDown, ChevronUp } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+// import { useRouter } from "next/navigation"
 import { notFound } from "next/navigation"
 import { useState } from "react"
 
@@ -157,7 +157,7 @@ interface ProgramDetailPageProps {
 }
 
 export default function ProgramDetailPage({ params }: ProgramDetailPageProps) {
-  const router = useRouter()
+  // const router = useRouter()
   const program = predefinedPrograms[params.slug as keyof typeof predefinedPrograms]
   const [expandedWeeks, setExpandedWeeks] = useState<number[]>([1])
 
@@ -242,34 +242,6 @@ export default function ProgramDetailPage({ params }: ProgramDetailPageProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
-      {/* Header */}
-      <header className="border-b border-stone-200 bg-white/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <button
-              onClick={() => router.back()}
-              className="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              <span className="text-sm font-medium">Back to Programs</span>
-            </button>
-            <div className="flex items-center gap-4">
-              <Link href="/login" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">
-                Sign In
-              </Link>
-              <Link href="/signup">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-stone-300 text-stone-700 hover:bg-stone-50 bg-transparent"
-                >
-                  Get Started
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <section className="py-12 px-4">
@@ -303,6 +275,8 @@ export default function ProgramDetailPage({ params }: ProgramDetailPageProps) {
               <Image
                 src={program.image || "/placeholder.svg"}
                 alt={program.title}
+                width={600}
+                height={300}
                 className="w-full h-80 object-cover rounded-2xl shadow-lg"
               />
             </div>
@@ -389,7 +363,7 @@ export default function ProgramDetailPage({ params }: ProgramDetailPageProps) {
                         >
                           {session.isUnlocked ? (
                             <Link
-                              href={`/session/${session.globalSessionNum}`}
+                              href={`/programs/practice/${session.globalSessionNum}`}
                               className="flex items-center justify-between group"
                             >
                               <div className="flex items-center gap-3">

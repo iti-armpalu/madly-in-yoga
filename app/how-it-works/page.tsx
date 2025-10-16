@@ -61,6 +61,8 @@ export default function HowItWorksPage() {
             <Image
               src="/serene-yoga-studio.webp"
               alt="Tranquil yoga practice environment"
+              width={600}
+              height={300}
               className="w-full h-full object-cover"
             />
             {/* <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" /> */}
